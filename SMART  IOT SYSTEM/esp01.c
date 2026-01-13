@@ -125,7 +125,7 @@ void esp01_connectAP()
 	Write_str_LCD("AT+CWJAP");
 	delay_ms(1000);
 	//need to change the wifi network name and password
-	UART0_Str("AT+CWJAP=\"JIO4G\",\"rajkumar5502\"\r\n");
+	UART0_Str("AT+CWJAP=\"JIO4G\",\"rajkumar12345\"\r\n");
 	i=0;memset(buff,'\0',200);
 	while(i<4);
 	delay_ms(2500);
@@ -181,7 +181,7 @@ void esp01_sendToThingspeak(char *val)
 		//while(buff[i] != '>');
 		delay_ms(500);
 		//need to change the thingspeak write API key accordind to your channel
-		 UART0_Str("GET /update?api_key=8HA5W7AHX6NOP66H&field1=");
+		 UART0_Str("GET /update?api_key=8xxxxxxxxxxxx&field1=");
 		 UART0_Str(val);
 		UART0_Str("\r\n\r\n");
 		delay_ms(5000);
@@ -245,7 +245,7 @@ void esp01_sendToThingspeak_2(char *val)
 		//while(buff[i] != '>');
 		delay_ms(500);
 		//need to change the thingspeak write API key accordind to your channel
-		 UART0_Str("GET /update?api_key=8HA5W7AHX6NOP66H&field2=");
+		 UART0_Str("GET /update?api_key=8xxxxxxxxxxxx&field2=");
 		 UART0_Str(val);
 		UART0_Str("\r\n\r\n");
 		delay_ms(5000);
@@ -278,4 +278,3 @@ void esp01_sendToThingspeak_2(char *val)
 	}
 	
 }
-
